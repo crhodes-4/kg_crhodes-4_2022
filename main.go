@@ -1,22 +1,22 @@
+//Chris Rhodes
+
 package main
 
 import (
 	"fmt"
 	"os"
-  //"strconv"
 )
 
 func main() {
 
-  var arr []string
-  arr = os.Args[1:] //get numbers input and store in array ex: [3, 25, 209]
+  args := os.Args[1:] //get numbers input and store in array ex: [3, 25, 209]
 
   //create lookup array
   arr_str := [10]string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
 
   outp := "" //output variable
 
-  for i, num := range arr { //outer loop iterates through arr
+  for i, num := range args { //outer loop iterates through arr
     for j, dig := range num { //inner loop iterates through string ex: "209"
 
       //if chain to check which char is found, concatenate to output str accordingly
@@ -44,8 +44,8 @@ func main() {
       _ = j
     }
 
-    if i != len(arr)-1 { //this is so if i is at last elem, it won't add "," to string outp
-        outp += ","
+    if i != len(args)-1 { //this is so if i is at last elem, it won't add "," to string outp
+        outp += "," //add comma to output
       }
   }
 

@@ -1,4 +1,3 @@
-//Chris Rhodes
 
 package main
 
@@ -9,7 +8,8 @@ import (
 
 func main() {
 
-  args := os.Args[1:] //get numbers input and store in array ex: [3, 25, 209]
+  var args []string
+  args = os.Args[1:] //get numbers input and store in array ex: [3, 25, 209]
 
   //create lookup array
   arr_str := [10]string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}

@@ -10,6 +10,7 @@ import (
 func main() {
 
   args := os.Args[1:] //get numbers input and store in array ex: [3, 25, 209]
+  var except bool = true //create bool to be used to catch error
 
   //create lookup array
   arr_str := [10]string{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}
@@ -40,6 +41,10 @@ func main() {
           outp += arr_str[8]
       } else if dig == '9' {
           outp += arr_str[9]
+      } else {
+        fmt.Println("Non numerical character detected.")
+        except = false //set except to false
+        break //get out of loop
       }
       _ = j
     }
@@ -49,6 +54,9 @@ func main() {
       }
   }
 
-  fmt.Println(outp) //print outp to stdout
+  if except { //if it did not hit error then print
+      fmt.Println(outp) //print outp to stdout
+  }
+
 
 }
